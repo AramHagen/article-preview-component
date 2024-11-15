@@ -1,0 +1,397 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --very-dark-grayish-blue: hsl(217, 19%, 35%);
+  --desaturated-dark-blue: hsl(214, 17%, 51%);
+  --grayish-blue: hsl(212, 23%, 69%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+  --light: 300;
+  --regular: 400;
+  --medium: 500;
+  --medium2: 600;
+  --bold: 700;
+  --fontFamily: "Manrope", sans-serif;
+}
+
+/*--------------------reset--------------------------*/
+a,
+abbr,
+acronym,
+address,
+article,
+aside,
+audio,
+b,
+blockquote,
+body,
+center,
+canvas,
+caption,
+cite,
+code,
+command,
+datalist,
+dd,
+del,
+details,
+dfn,
+dl,
+div,
+dt,
+em,
+embed,
+fieldset,
+figcaption,
+figure,
+footer,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+header,
+hgroup,
+html,
+i,
+iframe,
+img,
+ins,
+kbd,
+keygen,
+label,
+legend,
+li,
+meter,
+nav,
+object,
+ol,
+output,
+p,
+pre,
+progress,
+q,
+s,
+samp,
+section,
+small,
+span,
+source,
+strong,
+sub,
+sup,
+tfoot,
+thead,
+u,
+ul,
+var {
+  background: transparent;
+  border: 0 none;
+  margin: 0;
+  padding: 0;
+  outline: 0;
+  vertical-align: top;
+}
+
+a {
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+img {
+  vertical-align: top;
+  border: 0;
+}
+
+embed {
+  vertical-align: top;
+}
+
+article,
+aside,
+audio,
+canvas,
+command,
+datalist,
+details,
+embed,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+keygen,
+meter,
+nav,
+output,
+progress,
+section,
+source,
+video {
+  display: block;
+}
+
+mark,
+rp,
+rt,
+ruby,
+summary,
+time {
+  display: inline;
+}
+
+a,
+span {
+  display: inline-block;
+}
+
+a {
+  text-decoration: none;
+  color: #595959;
+  outline: none;
+  -moz-transition: 0.4s;
+  -webkit-transition: 0.4s;
+  -o-transition: 0.4s;
+  transition: 0.4s;
+}
+
+strong {
+  font-weight: var(--bold);
+}
+
+em {
+  font-style: italic;
+}
+
+ol {
+  list-style: decimal;
+}
+
+.t-center {
+  text-align: center;
+}
+
+html {
+  font-size: 13px;
+}
+
+body {
+  font-family: var(--fontFamily);
+  background-color: var(--light-grayish-blue);
+  color: var(--desaturated-dark-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  font-weight: var(--medium);
+}
+
+main {
+  max-width: 730px;
+  min-height: 280px;
+  width: 95%;
+  display: grid;
+  grid-template-columns: 285px 2fr;
+  background-color: white;
+  border-radius: 1rem;
+}
+@media screen and (max-width: 768px) {
+  main {
+    grid-template-columns: 1fr;
+    grid-template-rows: 200px 2fr;
+    max-width: 328px;
+  }
+}
+main picture {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 1rem 0 0 1rem;
+}
+@media screen and (max-width: 768px) {
+  main picture {
+    border-radius: 1rem 1rem 0 0;
+  }
+}
+main picture img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: left;
+  filter: brightness(1.08) contrast(0.95);
+}
+main .article-preview {
+  padding: 2.6rem;
+}
+@media screen and (max-width: 768px) {
+  main .article-preview {
+    padding: 2rem 2rem 1rem;
+    position: relative;
+  }
+}
+main .article-preview__title {
+  font-size: clamp(1.2rem, 1.3rem + 1vw, 1.7rem);
+  color: var(--very-dark-grayish-blue);
+}
+main .article-preview__description {
+  padding: 1rem 0 1.5rem;
+  line-height: 1.5rem;
+}
+main .article-preview__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .article-preview__author {
+  display: flex;
+  align-items: center;
+}
+main .article-preview__author img {
+  margin-right: 1rem;
+  border-radius: 50%;
+}
+main .article-preview__author-info {
+  display: flex;
+  flex-direction: column;
+}
+main .article-preview__author-name {
+  color: var(--very-dark-grayish-blue);
+}
+main .article-preview__author-date {
+  color: var(--grayish-blue);
+}
+
+.share-buttons {
+  position: relative;
+}
+@media screen and (max-width: 768px) {
+  .share-buttons {
+    position: static;
+  }
+}
+.share-buttons__content {
+  height: 55px;
+  border-radius: 1rem;
+  background-color: var(--very-dark-grayish-blue);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 2.6rem;
+  position: absolute;
+  top: -45px;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: all 0.3s ease-out, opacity 0.5s ease-out;
+  z-index: 2;
+}
+.share-buttons__content.hide {
+  transform: translate(-50%, 9px);
+  opacity: 0;
+}
+@media screen and (max-width: 768px) {
+  .share-buttons__content.hide {
+    transform: none;
+    opacity: 0;
+    bottom: -39px;
+  }
+}
+@media screen and (max-width: 768px) {
+  .share-buttons__content {
+    transition: bottom 0.3s ease-out, opacity 0.5s ease-out;
+    transform: none;
+    top: auto;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border-radius: 0 0 1rem 1rem;
+    height: 62px;
+    justify-content: flex-start;
+    padding-left: 2rem;
+  }
+}
+.share-buttons__content:after {
+  content: "";
+  position: absolute;
+  width: 22px;
+  height: 22px;
+  background-color: var(--very-dark-grayish-blue);
+  bottom: -22px;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+@media screen and (max-width: 768px) {
+  .share-buttons__content:after {
+    display: none;
+  }
+}
+.share-buttons__content > span {
+  text-transform: uppercase;
+  color: var(--desaturated-dark-blue);
+  margin-right: 1rem;
+  letter-spacing: 5px;
+}
+.share-buttons__list {
+  display: flex;
+}
+.share-buttons__list li {
+  margin: 0 0.5rem;
+}
+.share-buttons__list li i {
+  font-size: 1.5rem;
+  color: var(--white);
+}
+
+#showSocialLinksBtn {
+  border-radius: 50%;
+  border: none;
+  background-color: var(--light-grayish-blue);
+  color: var(--desaturated-dark-blue);
+  width: 32px;
+  height: 32px;
+  cursor: pointer;
+  transition: all 0.5s ease-in;
+  position: relative;
+  z-index: 100;
+}
+#showSocialLinksBtn.active {
+  color: var(--light-grayish-blue);
+  background-color: var(--desaturated-dark-blue);
+}
+
+.flex {
+  display: flex;
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.align-center {
+  align-items: center;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+footer .attribution {
+  font-size: 11px;
+  text-align: center;
+  padding: 0.3rem;
+}
+footer .attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+/*# sourceMappingURL=main.css.map */
